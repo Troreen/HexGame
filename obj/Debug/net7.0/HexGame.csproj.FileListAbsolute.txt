@@ -1,0 +1,14 @@
+C:\Users\bedir\Desktop\HexGame\bin\Debug\net7.0\HexGame.exe
+C:\Users\bedir\Desktop\HexGame\bin\Debug\net7.0\HexGame.deps.json
+C:\Users\bedir\Desktop\HexGame\bin\Debug\net7.0\HexGame.runtimeconfig.json
+C:\Users\bedir\Desktop\HexGame\bin\Debug\net7.0\HexGame.dll
+C:\Users\bedir\Desktop\HexGame\bin\Debug\net7.0\HexGame.pdb
+C:\Users\bedir\Desktop\HexGame\obj\Debug\net7.0\HexGame.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bedir\Desktop\HexGame\obj\Debug\net7.0\HexGame.AssemblyInfoInputs.cache
+C:\Users\bedir\Desktop\HexGame\obj\Debug\net7.0\HexGame.AssemblyInfo.cs
+C:\Users\bedir\Desktop\HexGame\obj\Debug\net7.0\HexGame.csproj.CoreCompileInputs.cache
+C:\Users\bedir\Desktop\HexGame\obj\Debug\net7.0\HexGame.dll
+C:\Users\bedir\Desktop\HexGame\obj\Debug\net7.0\refint\HexGame.dll
+C:\Users\bedir\Desktop\HexGame\obj\Debug\net7.0\HexGame.pdb
+C:\Users\bedir\Desktop\HexGame\obj\Debug\net7.0\HexGame.genruntimeconfig.cache
+C:\Users\bedir\Desktop\HexGame\obj\Debug\net7.0\ref\HexGame.dll
