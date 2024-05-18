@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\bedir\\Desktop\\HexGame\\HexGame.csproj": {}
+    "C:\\Users\\bedir\\Desktop\\HexGame\\HexGame.csproj": {}
   },
   "projects": {
-    "c:\\Users\\bedir\\Desktop\\HexGame\\HexGame.csproj": {
+    "C:\\Users\\bedir\\Desktop\\HexGame\\HexGame.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\bedir\\Desktop\\HexGame\\HexGame.csproj",
+        "projectUniqueName": "C:\\Users\\bedir\\Desktop\\HexGame\\HexGame.csproj",
         "projectName": "HexGame",
-        "projectPath": "c:\\Users\\bedir\\Desktop\\HexGame\\HexGame.csproj",
+        "projectPath": "C:\\Users\\bedir\\Desktop\\HexGame\\HexGame.csproj",
         "packagesPath": "C:\\Users\\bedir\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\bedir\\Desktop\\HexGame\\obj\\",
+        "outputPath": "C:\\Users\\bedir\\Desktop\\HexGame\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -64,7 +64,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.205\\RuntimeIdentifierGraph.json"
         }
       }
     }

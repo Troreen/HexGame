@@ -12,3 +12,4 @@ C:\Users\bedir\Desktop\HexGame\obj\Debug\net7.0\refint\HexGame.dll
 C:\Users\bedir\Desktop\HexGame\obj\Debug\net7.0\HexGame.pdb
 C:\Users\bedir\Desktop\HexGame\obj\Debug\net7.0\HexGame.genruntimeconfig.cache
 C:\Users\bedir\Desktop\HexGame\obj\Debug\net7.0\ref\HexGame.dll
+C:\Users\bedir\Desktop\HexGame\obj\Debug\net7.0\HexGame.sourcelink.json

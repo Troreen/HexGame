@@ -2,8 +2,7 @@ namespace HexGame
 {
     public abstract class Player
     {
-        public char Marker { get; private set; }
-    
+        public char Marker { get; }
 
         protected Player(char marker)
         {
@@ -12,5 +11,4 @@ namespace HexGame
 
         public abstract (int, int) MakeMove(GameBoard board);
     }
-
 }

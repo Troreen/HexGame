@@ -1,0 +1,122 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\bedir\\Desktop\\HexGame\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0BCE427B-955F-4A5C-881E-1EC06F7C76C0}|HexGame.csproj|C:\\Users\\bedir\\Desktop\\HexGame\\classes\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BCE427B-955F-4A5C-881E-1EC06F7C76C0}|HexGame.csproj|solutionrelative:classes\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BCE427B-955F-4A5C-881E-1EC06F7C76C0}|HexGame.csproj|C:\\Users\\bedir\\Desktop\\HexGame\\classes\\minmaxplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BCE427B-955F-4A5C-881E-1EC06F7C76C0}|HexGame.csproj|solutionrelative:classes\\minmaxplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BCE427B-955F-4A5C-881E-1EC06F7C76C0}|HexGame.csproj|C:\\Users\\bedir\\Desktop\\HexGame\\classes\\humanplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BCE427B-955F-4A5C-881E-1EC06F7C76C0}|HexGame.csproj|solutionrelative:classes\\humanplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BCE427B-955F-4A5C-881E-1EC06F7C76C0}|HexGame.csproj|C:\\Users\\bedir\\Desktop\\HexGame\\classes\\computerplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BCE427B-955F-4A5C-881E-1EC06F7C76C0}|HexGame.csproj|solutionrelative:classes\\computerplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BCE427B-955F-4A5C-881E-1EC06F7C76C0}|HexGame.csproj|C:\\Users\\bedir\\Desktop\\HexGame\\classes\\gameboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BCE427B-955F-4A5C-881E-1EC06F7C76C0}|HexGame.csproj|solutionrelative:classes\\gameboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BCE427B-955F-4A5C-881E-1EC06F7C76C0}|HexGame.csproj|c:\\users\\bedir\\desktop\\hexgame\\classes\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BCE427B-955F-4A5C-881E-1EC06F7C76C0}|HexGame.csproj|solutionrelative:classes\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\bedir\\Desktop\\HexGame\\Classes\\Program.cs",
+              "RelativeDocumentMoniker": "Classes\\Program.cs",
+              "ToolTip": "C:\\Users\\bedir\\Desktop\\HexGame\\Classes\\Program.cs",
+              "RelativeToolTip": "Classes\\Program.cs",
+              "ViewState": "AQIAAFYAAAAAAAAAAAAwwL0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-17T21:23:22.136Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Player.cs",
+              "DocumentMoniker": "C:\\Users\\bedir\\Desktop\\HexGame\\Classes\\Player.cs",
+              "RelativeDocumentMoniker": "Classes\\Player.cs",
+              "ToolTip": "C:\\Users\\bedir\\Desktop\\HexGame\\Classes\\Player.cs",
+              "RelativeToolTip": "Classes\\Player.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-17T21:23:21.538Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MinMaxPlayer.cs",
+              "DocumentMoniker": "C:\\Users\\bedir\\Desktop\\HexGame\\Classes\\MinMaxPlayer.cs",
+              "RelativeDocumentMoniker": "Classes\\MinMaxPlayer.cs",
+              "ToolTip": "C:\\Users\\bedir\\Desktop\\HexGame\\Classes\\MinMaxPlayer.cs",
+              "RelativeToolTip": "Classes\\MinMaxPlayer.cs",
+              "ViewState": "AQIAAIEAAAAAAAAAAAAAAM8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-17T21:23:21.036Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HumanPlayer.cs",
+              "DocumentMoniker": "C:\\Users\\bedir\\Desktop\\HexGame\\Classes\\HumanPlayer.cs",
+              "RelativeDocumentMoniker": "Classes\\HumanPlayer.cs",
+              "ToolTip": "C:\\Users\\bedir\\Desktop\\HexGame\\Classes\\HumanPlayer.cs",
+              "RelativeToolTip": "Classes\\HumanPlayer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAA8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-17T21:23:20.435Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GameBoard.cs",
+              "DocumentMoniker": "C:\\Users\\bedir\\Desktop\\HexGame\\Classes\\GameBoard.cs",
+              "RelativeDocumentMoniker": "Classes\\GameBoard.cs",
+              "ToolTip": "C:\\Users\\bedir\\Desktop\\HexGame\\Classes\\GameBoard.cs",
+              "RelativeToolTip": "Classes\\GameBoard.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAG4AAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-17T21:23:18.753Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ComputerPlayer.cs",
+              "DocumentMoniker": "C:\\Users\\bedir\\Desktop\\HexGame\\Classes\\ComputerPlayer.cs",
+              "RelativeDocumentMoniker": "Classes\\ComputerPlayer.cs",
+              "ToolTip": "C:\\Users\\bedir\\Desktop\\HexGame\\Classes\\ComputerPlayer.cs",
+              "RelativeToolTip": "Classes\\ComputerPlayer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-17T21:23:16.85Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

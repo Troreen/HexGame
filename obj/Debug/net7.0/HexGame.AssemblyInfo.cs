@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HexGame")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+04ed16b80d1e93250a74bdff41ffe6f3f29826f7")]
 [assembly: System.Reflection.AssemblyProductAttribute("HexGame")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HexGame")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
