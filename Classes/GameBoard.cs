@@ -6,42 +6,53 @@ namespace HexGame
     public class GameBoard
     {
         private char[,] board;
-        private int size;
+        private int rows;
+        private int cols;
         private Stack<(int row, int col, char prev)> moveHistory; // Stack to track moves for undoing
+        private static Random random = new Random();
 
-        public GameBoard(int size)
+        public GameBoard(int rows, int cols)
         {
-            this.size = size;
-            board = new char[size, size];
+            this.rows = rows;
+            this.cols = cols;
+            board = new char[rows, cols];
             moveHistory = new Stack<(int row, int col, char prev)>();
             InitializeBoard();
+            BlockRandomCell();
         }
 
         private void InitializeBoard()
         {
-            for (int i = 0; i < size; i++)
+            for (int i = 0; i < rows; i++)
             {
-                for (int j = 0; j < size; j++)
+                for (int j = 0; j < cols; j++)
                 {
                     board[i, j] = '.';
                 }
             }
         }
 
+        private void BlockRandomCell()
+        {
+            int blockRow = random.Next(rows);
+            int blockCol = random.Next(cols);
+            board[blockRow, blockCol] = '#';  // '#' represents a blocked cell
+        }
+
         public void DisplayBoard(List<(int, int)> winningPath = null)
         {
             Console.Write(new string(' ', 3)); // Initial space for row numbers
-            for (int i = 0; i < size; i++)
+            for (int i = 0; i < cols; i++)
             {
                 Console.Write(i + " "); // Print column numbers
             }
             Console.WriteLine();
 
-            for (int i = 0; i < size; i++)
+            for (int i = 0; i < rows; i++)
             {
                 Console.Write(new string(' ', 2 + i)); // Offset for hexagonal appearance
                 Console.Write(i + " "); // Print row number
-                for (int j = 0; j < size; j++)
+                for (int j = 0; j < cols; j++)
                 {
                     bool isWinningCell = winningPath != null && winningPath.Contains((i, j));
 
@@ -52,6 +63,10 @@ namespace HexGame
                     else if (board[i, j] == 'O')
                     {
                         Console.ForegroundColor = isWinningCell ? ConsoleColor.Yellow : ConsoleColor.Blue;
+                    }
+                    else if (board[i, j] == '#')
+                    {
+                        Console.ForegroundColor = ConsoleColor.DarkGray;
                     }
                     else
                     {
@@ -67,7 +82,7 @@ namespace HexGame
 
         public bool MakeMove(int row, int column, char marker)
         {
-            if (row >= 0 && row < size && column >= 0 && column < size && !IsCellOccupied(row, column))
+            if (row >= 0 && row < rows && column >= 0 && column < cols && !IsCellOccupied(row, column))
             {
                 moveHistory.Push((row, column, board[row, column])); // Save the current state before changing
                 board[row, column] = marker;
@@ -92,58 +107,83 @@ namespace HexGame
 
         public bool CheckWin(char playerMarker, out List<(int, int)> winningPath)
         {
-            winningPath = new List<(int, int)>();
-            bool[,] visited = new bool[size, size];
+            winningPath = BFS(playerMarker);
+            return winningPath.Count > 0;
+        }
+
+        private List<(int, int)> BFS(char playerMarker)
+        {
+            var startCells = playerMarker == 'X'
+                ? new List<(int, int)> { }
+                : new List<(int, int)> { };
+
             if (playerMarker == 'X')
             {
-                for (int i = 0; i < size; i++)
+                for (int c = 0; c < cols; c++)
                 {
-                    if (DFS(i, 0, playerMarker, visited, winningPath))
+                    startCells.Add((0, c));
+                }
+            }
+            else
+            {
+                for (int r = 0; r < rows; r++)
+                {
+                    startCells.Add((r, 0));
+                }
+            }
+
+            int targetRow = playerMarker == 'X' ? rows - 1 : -1;
+            int targetCol = playerMarker == 'O' ? cols - 1 : -1;
+
+            var visited = new HashSet<(int, int)>();
+            var queue = new Queue<(int, int, List<(int, int)>)>();
+
+            foreach (var (r, c) in startCells)
+            {
+                if (board[r, c] == playerMarker)
+                {
+                    queue.Enqueue((r, c, new List<(int, int)> { (r, c) }));
+                    visited.Add((r, c));
+                }
+            }
+
+            while (queue.Count > 0)
+            {
+                var (r, c, path) = queue.Dequeue();
+
+                if ((playerMarker == 'X' && r == targetRow) || (playerMarker == 'O' && c == targetCol))
+                {
+                    return path;  // Found a path to the other side
+                }
+
+                var directions = new List<(int, int)>
+                {
+                    (r - 1, c),
+                    (r + 1, c),
+                    (r, c - 1),
+                    (r, c + 1),
+                    (r - 1, c + 1),
+                    (r + 1, c - 1)
+                };
+
+                foreach (var (nr, nc) in directions)
+                {
+                    if (nr >= 0 && nr < rows && nc >= 0 && nc < cols && !visited.Contains((nr, nc)))
                     {
-                        return true;
+                        if (board[nr, nc] == playerMarker)
+                        {
+                            queue.Enqueue((nr, nc, new List<(int, int)>(path) { (nr, nc) }));
+                            visited.Add((nr, nc));
+                        }
                     }
                 }
             }
-            else if (playerMarker == 'O')
-            {
-                for (int i = 0; i < size; i++)
-                {
-                    if (DFS(0, i, playerMarker, visited, winningPath))
-                    {
-                        return true;
-                    }
-                }
-            }
-            winningPath.Clear();
-            return false;
+
+            return new List<(int, int)>();  // No path found
         }
 
-        private bool DFS(int row, int col, char playerMarker, bool[,] visited, List<(int, int)> path)
-        {
-            if (row < 0 || col < 0 || row >= size || col >= size || visited[row, col] || board[row, col] != playerMarker)
-                return false;
-
-            visited[row, col] = true;
-            path.Add((row, col));
-            if ((playerMarker == 'X' && col == size - 1) || (playerMarker == 'O' && row == size - 1))
-                return true;
-
-            bool result = DFS(row - 1, col, playerMarker, visited, path) ||
-                          DFS(row + 1, col, playerMarker, visited, path) ||
-                          DFS(row, col - 1, playerMarker, visited, path) ||
-                          DFS(row, col + 1, playerMarker, visited, path) ||
-                          DFS(row - 1, col + 1, playerMarker, visited, path) ||
-                          DFS(row + 1, col - 1, playerMarker, visited, path);
-
-            if (!result)
-            {
-                path.RemoveAt(path.Count - 1);
-            }
-
-            return result;
-        }
-
-        public int Size => size; // Expose the board size publicly
+        public int Rows => rows; // Expose the number of rows publicly
+        public int Cols => cols; // Expose the number of columns publicly
 
         // Indexer to allow board[row, col] access
         public char this[int row, int col]

@@ -4,12 +4,12 @@ using System.Linq;
 
 namespace HexGame
 {
-    public class MinMaxPlayer : Player
+    public class MinMaxPlayer2 : Player
     {
         public static int MaxDepth = 3; // You can adjust this as needed
         private Random random = new Random();
 
-        public MinMaxPlayer(char marker) : base(marker) { }
+        public MinMaxPlayer2(char marker) : base(marker) { }
 
         public override (int, int) MakeMove(GameBoard board)
         {
@@ -125,31 +125,46 @@ namespace HexGame
         {
             char opponentMarker = marker == 'X' ? 'O' : 'X';
 
+            // High reward for winning, high penalty for losing
             if (board.CheckWin(marker, out _))
-                return 10;
+                return 10000;
 
             if (board.CheckWin(opponentMarker, out _))
-                return -10;
+                return -10000;
 
             int score = 0;
-            for (int row = 0; row < board.Rows; row++)
+            for (int row = 0; row < board.Size; row++)
             {
-                for (int col = 0; col < board.Cols; col++)
+                for (int col = 0; col < board.Size; col++)
                 {
                     if (board[row, col] == marker)
                     {
+                        // Reward for number of connections
                         score += CountConnections(board, row, col, marker);
+
+                        // Reward for control of strategic positions
                         if (IsCenter(row, col, board.Size))
+                            score += 3;
+                        if (IsEdge(row, col, board.Size))
                             score += 2;
                     }
                     else if (board[row, col] == opponentMarker)
                     {
+                        // Penalty for opponent's connections
                         score -= CountConnections(board, row, col, opponentMarker);
+
+                        // Penalty for opponent's control of strategic positions
                         if (IsCenter(row, col, board.Size))
+                            score -= 3;
+                        if (IsEdge(row, col, board.Size))
                             score -= 2;
                     }
                 }
             }
+
+            // Additional heuristic: proximity to completing winning paths
+            score += EvaluateWinningPaths(board, marker);
+            score -= EvaluateWinningPaths(board, opponentMarker);
 
             return score;
         }
@@ -165,13 +180,50 @@ namespace HexGame
                 int dc = directions[i, 1];
                 int newRow = row + dr;
                 int newCol = col + dc;
-                if (newRow >= 0 && newRow < board.Rows && newCol >= 0 && newCol < board.Cols && board[newRow, newCol] == marker)
+                if (newRow >= 0 && newRow < board.Size && newCol >= 0 && newCol < board.Size && board[newRow, newCol] == marker)
                 {
                     connections++;
                 }
             }
 
             return connections;
+        }
+
+        private int EvaluateWinningPaths(GameBoard board, char marker)
+        {
+            // Evaluate proximity to completing winning paths
+            int score = 0;
+            for (int row = 0; row < board.Size; row++)
+            {
+                for (int col = 0; col < board.Size; col++)
+                {
+                    if (board[row, col] == marker)
+                    {
+                        score += CountPotentialWinningPaths(board, row, col, marker);
+                    }
+                }
+            }
+            return score;
+        }
+
+        private int CountPotentialWinningPaths(GameBoard board, int row, int col, char marker)
+        {
+            int paths = 0;
+            int[,] directions = { { -1, 0 }, { 1, 0 }, { 0, -1 }, { 0, 1 }, { -1, 1 }, { 1, -1 } };
+
+            for (int i = 0; i < directions.GetLength(0); i++)
+            {
+                int dr = directions[i, 0];
+                int dc = directions[i, 1];
+                int newRow = row + dr;
+                int newCol = col + dc;
+                if (newRow >= 0 && newRow < board.Size && newCol >= 0 && newCol < board.Size && board[newRow, newCol] == '.')
+                {
+                    paths++;
+                }
+            }
+
+            return paths;
         }
 
         private bool IsCenter(int row, int col, int size)
@@ -181,10 +233,16 @@ namespace HexGame
                    (col == center || col == center - 1 || col == center + 1);
         }
 
+        private bool IsEdge(int row, int col, int size)
+        {
+            return row == 0 || row == size - 1 || col == 0 || col == size - 1;
+        }
+
+
         private (int, int)[] GenerateMoves(GameBoard board)
         {
-            var moves = from row in Enumerable.Range(0, board.Rows)
-                        from col in Enumerable.Range(0, board.Cols)
+            var moves = from row in Enumerable.Range(0, board.Size)
+                        from col in Enumerable.Range(0, board.Size)
                         where !board.IsCellOccupied(row, col)
                         select (row, col);
 

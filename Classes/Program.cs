@@ -34,8 +34,13 @@ namespace HexGame
 
         private static void PlayHumanVsMinMax()
         {
+            Console.Write("Enter number of rows: ");
+            int rows = int.Parse(Console.ReadLine());
+            Console.Write("Enter number of columns: ");
+            int cols = int.Parse(Console.ReadLine());
+
             Console.WriteLine("Welcome to Hex Game!");
-            GameBoard board = new GameBoard(5);
+            GameBoard board = new GameBoard(rows, cols);
             board.DisplayBoard();
 
             Player player1 = new HumanPlayer('X');
@@ -80,12 +85,15 @@ namespace HexGame
 
         private static void TestMinMaxBlocking()
         {
-            Console.Write("Enter board size: ");
-            int boardSize = int.Parse(Console.ReadLine());
-            Console.WriteLine($"Testing MinMaxPlayer blocking move on a {boardSize}x{boardSize} board...");
+            Console.Write("Enter number of rows: ");
+            int rows = int.Parse(Console.ReadLine());
+            Console.Write("Enter number of columns: ");
+            int cols = int.Parse(Console.ReadLine());
 
-            GameBoard board = new GameBoard(boardSize);
-            for (int i = 0; i < boardSize - 1; i++)
+            Console.WriteLine($"Testing MinMaxPlayer blocking move on a {rows}x{cols} board...");
+
+            GameBoard board = new GameBoard(rows, cols);
+            for (int i = 0; i < Math.Min(rows, cols) - 1; i++)
             {
                 board.MakeMove(i, i, 'X');
             }
@@ -107,17 +115,19 @@ namespace HexGame
 
         private static void PlayMinMaxVsMinMax()
         {
-            int numberOfGames = 50;
+            Console.Write("Enter number of rows: ");
+            int rows = int.Parse(Console.ReadLine());
+            Console.Write("Enter number of columns: ");
+            int cols = int.Parse(Console.ReadLine());
+
+            int numberOfGames = 100;
             int ai1Wins = 0;
             int ai2Wins = 0;
             int draws = 0;
 
-            long totalResponseTime = 0;
-            int totalMoves = 0;
-
             for (int i = 0; i < numberOfGames; i++)
             {
-                GameBoard board = new GameBoard(5);
+                GameBoard board = new GameBoard(rows, cols);
                 Player ai1 = new MinMaxPlayer('X');
                 Player ai2 = new MinMaxPlayer('O');
                 bool playerOneTurn = true;
@@ -130,16 +140,10 @@ namespace HexGame
 
                     while (!moveMade)
                     {
-                        Stopwatch stopwatch = Stopwatch.StartNew();
                         var (row, column) = currentPlayer.MakeMove(board);
-                        stopwatch.Stop();
-
                         if (board.MakeMove(row, column, currentPlayer.Marker))
                         {
                             moveMade = true;
-
-                            totalResponseTime += stopwatch.ElapsedMilliseconds;
-                            totalMoves++;
 
                             if (board.CheckWin(currentPlayer.Marker, out List<(int, int)> winningPath))
                             {
@@ -166,18 +170,16 @@ namespace HexGame
                 }
             }
 
-            double avgResponseTime = (double)totalResponseTime / totalMoves;
             Console.WriteLine($"AI1 Wins: {ai1Wins}");
             Console.WriteLine($"AI2 Wins: {ai2Wins}");
             Console.WriteLine($"Draws: {draws}");
-            Console.WriteLine($"Average Response Time: {avgResponseTime} ms");
         }
 
         private static bool IsBoardFull(GameBoard board)
         {
-            for (int row = 0; row < board.Size; row++)
+            for (int row = 0; row < board.Rows; row++)
             {
-                for (int col = 0; col < board.Size; col++)
+                for (int col = 0; col < board.Cols; col++)
                 {
                     if (!board.IsCellOccupied(row, col))
                         return false;
