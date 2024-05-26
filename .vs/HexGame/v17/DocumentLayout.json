@@ -3,15 +3,15 @@
   "WorkspaceRootPath": "C:\\Users\\bedir\\Desktop\\HexGame\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0BCE427B-955F-4A5C-881E-1EC06F7C76C0}|HexGame.csproj|C:\\Users\\bedir\\Desktop\\HexGame\\classes\\minmaxplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0BCE427B-955F-4A5C-881E-1EC06F7C76C0}|HexGame.csproj|c:\\users\\bedir\\desktop\\hexgame\\classes\\minmaxplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0BCE427B-955F-4A5C-881E-1EC06F7C76C0}|HexGame.csproj|solutionrelative:classes\\minmaxplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0BCE427B-955F-4A5C-881E-1EC06F7C76C0}|HexGame.csproj|c:\\users\\bedir\\desktop\\hexgame\\classes\\minmaxplayer - copy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0BCE427B-955F-4A5C-881E-1EC06F7C76C0}|HexGame.csproj|C:\\Users\\bedir\\Desktop\\HexGame\\classes\\minmaxplayer - copy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0BCE427B-955F-4A5C-881E-1EC06F7C76C0}|HexGame.csproj|solutionrelative:classes\\minmaxplayer - copy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0BCE427B-955F-4A5C-881E-1EC06F7C76C0}|HexGame.csproj|c:\\users\\bedir\\desktop\\hexgame\\classes\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0BCE427B-955F-4A5C-881E-1EC06F7C76C0}|HexGame.csproj|C:\\Users\\bedir\\Desktop\\HexGame\\classes\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0BCE427B-955F-4A5C-881E-1EC06F7C76C0}|HexGame.csproj|solutionrelative:classes\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -46,8 +46,7 @@
               "RelativeToolTip": "Classes\\Program.cs",
               "ViewState": "AQIAAJAAAAAAAAAAAAAAwKIAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T21:23:22.136Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-17T21:23:22.136Z"
             },
             {
               "$type": "Document",
@@ -59,8 +58,7 @@
               "RelativeToolTip": "Classes\\GameBoard.cs",
               "ViewState": "AQIAAKsAAAAAAAAAAAAIwMMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T21:23:18.753Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-17T21:23:18.753Z"
             },
             {
               "$type": "Document",
@@ -84,8 +82,7 @@
               "RelativeToolTip": "Classes\\MinMaxPlayer - Copy.cs",
               "ViewState": "AQIAACUAAAAAAAAAAAAhwDMAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-21T12:38:42.802Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-21T12:38:42.802Z"
             },
             {
               "$type": "Document",
